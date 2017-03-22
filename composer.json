@@ -1,0 +1,18 @@
+{
+    "name": "sample/todolist",
+    "description": "sample todo list",
+    "require": {
+        "silverstripe/framework": "3.5.3",
+        "gdmedia/ss-auto-git-ignore": "^1.0",
+        "silverstripe-australia/gridfieldextensions": "^1.4"
+    },
+    "license": "BSD",
+    "config": {
+        "process-timeout": 600
+    },
+    "scripts": {
+        "post-update-cmd": "GDM\\SSAutoGitIgnore\\UpdateScript::Go"
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}
