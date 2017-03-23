@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6c9aa1eda58a2ca834b7c84648515ec4",
     "content-hash": "2480cf2d107ef6258c19c0f580bb8d07",
     "packages": [
         {
@@ -112,7 +111,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-08-13 20:53:52"
+            "time": "2016-08-13T20:53:52+00:00"
         },
         {
             "name": "gdmedia/ss-auto-git-ignore",
@@ -142,7 +141,7 @@
                 }
             ],
             "description": "A Composer post-update-cmd script to automatically add Composer managed SilverStripe modules and themes to .gitignore",
-            "time": "2016-07-27 19:24:49"
+            "time": "2016-07-27T19:24:49+00:00"
         },
         {
             "name": "silverstripe-australia/gridfieldextensions",
@@ -195,7 +194,7 @@
                 "gridfield",
                 "silverstripe"
             ],
-            "time": "2016-08-19 08:28:30"
+            "time": "2016-08-19T08:28:30+00:00"
         },
         {
             "name": "silverstripe/framework",
@@ -249,7 +248,7 @@
                 "framework",
                 "silverstripe"
             ],
-            "time": "2017-02-20 17:01:16"
+            "time": "2017-02-20T17:01:16+00:00"
         }
     ],
     "packages-dev": [],
