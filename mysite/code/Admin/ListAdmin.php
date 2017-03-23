@@ -13,7 +13,7 @@ class ListAdmin extends ModelAdmin {
 	 */
 	private static $managed_models = array(
 		'TodoList',
-		//'TodoTask',
+		// 'TodoTask',
 	);
 
 	/**
@@ -39,5 +39,19 @@ class ListAdmin extends ModelAdmin {
 	 * @config
 	 */
 	private static $menu_icon = 'framework/admin/images/menu-icons/16x16/pencil.png';
+
+	public function getEditForm($id = null, $fields = null) {
+		$form = parent::getEditForm($id, $fields);
+		$gridField = $form->Fields()->first();
+		$fieldConfig = $gridField->getConfig();
+		if (ClassInfo::exists('GridFieldOrderableRows')) {
+			$fieldConfig->addComponent(new GridFieldOrderableRows('Sort'));
+		}
+		if (ClassInfo::exists('GridFieldAddExistingSearchButton')) {
+			$fieldConfig->addComponent(new GridFieldAddExistingSearchButton());
+		}
+
+		return $form;
+	}
 
 }

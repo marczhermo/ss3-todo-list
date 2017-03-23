@@ -13,6 +13,7 @@ class TodoList extends DataObject {
 	 */
 	private static $db = array(
 		'Title' => 'Varchar(255)',
+		'Sort' => 'Int',
 	);
 
 	private static $has_one = array(
@@ -86,16 +87,6 @@ class TodoList extends DataObject {
 		foreach($this->Tasks() as $task) {
 			$task->delete();
 		}
-	}
-
-	public function getCMSFields() {
-		$fields = parent::getCMSFields();
-
-		if (ClassInfo::exists('GridFieldOrderableRows')) {
-			$fields->dataFieldByName('Tasks')->getConfig()->addComponent(new GridFieldOrderableRows('Sort'));
-		}
-
-		return $fields;
 	}
 
 	public function extendedCan($methodName, $member) {
