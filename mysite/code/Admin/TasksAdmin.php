@@ -39,4 +39,19 @@ class TasksAdmin extends ModelAdmin {
 	 */
 	private static $menu_icon = 'framework/admin/images/menu-icons/16x16/db.png';
 
+	public function getEditForm($id = null, $fields = null) {
+		$form = parent::getEditForm($id, $fields);
+		$gridField = $form->Fields()->first();
+		$fieldConfig = $gridField->getConfig();
+		if (ClassInfo::exists('GridFieldOrderableRows')) {
+			$fieldConfig->addComponent(new GridFieldOrderableRows('Sort'));
+		}
+		if (ClassInfo::exists('GridFieldAddExistingSearchButton')) {
+			$fieldConfig->addComponent(new GridFieldAddExistingSearchButton());
+		}
+		$fieldConfig->addComponent(new TaskGridFieldAction());
+
+		return $form;
+	}
+
 }
